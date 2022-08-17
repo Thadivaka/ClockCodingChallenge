@@ -16,7 +16,7 @@ namespace ClockCodingChallenge
             int hour = 0;
             int min = 0;
             string minText = string.Empty;
-            string minDisplayText = Contants.Past;
+            string pastOrToMinuteText = Contants.Past;
 
             if(!time.Contains(':'))
             {
@@ -51,12 +51,12 @@ namespace ClockCodingChallenge
             if (min > Contants.Thirty)
             {
                 min = Contants.Sixty - min;
-                minDisplayText = Contants.To;
+                pastOrToMinuteText = Contants.To;
                 hour++;
                 hourText = unitsArray[hour];
             }
-            minText = GetMinText(minDisplayText, min);
-            return minText + minDisplayText + hourText;
+            minText = GetMinText(pastOrToMinuteText, min);
+            return minText + pastOrToMinuteText + hourText;
         }
 
         private void ParseParseStringToInt(string[] splitHourAndMinute, out int hour, out int min)

@@ -151,6 +151,33 @@ namespace ClockCodingChallenge.Test
         }
 
         [TestMethod]
+        public void TalkingClock_14_01_Test()
+        {
+            TalkingClock tc = new TalkingClock();
+            var result = tc.GetHumanFriendlyTime("14:01");
+
+            Assert.AreEqual(result, "One past Two");
+        }
+
+        [TestMethod]
+        public void TalkingClock_14_29_Test()
+        {
+            TalkingClock tc = new TalkingClock();
+            var result = tc.GetHumanFriendlyTime("14:29");
+
+            Assert.AreEqual(result, "Twenty nine past Two");
+        }
+
+        [TestMethod]
+        public void TalkingClock_14_31_Test()
+        {
+            TalkingClock tc = new TalkingClock();
+            var result = tc.GetHumanFriendlyTime("14:31");
+
+            Assert.AreEqual(result, "Twenty nine to Three");
+        }
+
+        [TestMethod]
         public void TalkingClock_25_45_Invalid_Hour_Test()
         {
             TalkingClock tc = new TalkingClock();
